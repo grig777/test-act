@@ -29,8 +29,14 @@ jobs:
     needs: [test, lint]
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: run buil simulator
-      run: echo "build done"
+      run: num run build
+    - name: artifact the build
+      uses: actions/upload-artifact@v3
+      with:
+        name: frontand-build
+        path: ./app/build
   
   deploy:
     needs: [build]

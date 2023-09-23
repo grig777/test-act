@@ -18,6 +18,7 @@ jobs:
       run: echo "Linter done"
   
   build:
+    needs: [test, lint]
     runs-on: ubuntu-latest
     steps:
     - name: run buil simulator

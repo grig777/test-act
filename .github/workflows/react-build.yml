@@ -7,8 +7,25 @@ jobs:
     - uses: actions/checkout@v4
     - name:
       working-directory: ./app
-      run: npm install
+      run: npm ci
     - name: Test
       working-directory: ./app
       run: npm run test
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: run lint simulator
+      run: echo "Linter done"
+  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: run buil simulator
+      run: echo "build done"
+  
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: run lint simulator
+      run: echo "deploy done"
   

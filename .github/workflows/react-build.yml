@@ -31,7 +31,7 @@ jobs:
     environment: test
     env:
       MY_SECRET: ${{ secrets.MY_SECRET }}
-      VAL_1: ${{ vars.VAL_1 }}
+      VAL_1: ${{ vars.VAR_1 }}
     runs-on: ubuntu-latest
     steps:
     - name: run lint simulator

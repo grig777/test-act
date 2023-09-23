@@ -26,8 +26,11 @@ jobs:
   
   deploy:
     needs: [build]
+    environment: test
+    env:
+      MY_SECRET: ${{ secrets.MY_SECRET }}
     runs-on: ubuntu-latest
     steps:
     - name: run lint simulator
-      run: echo "deploy done"
+      run: echo "deploy done ${MY_SECRET}"
   

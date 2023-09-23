@@ -35,5 +35,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: run lint simulator
-      run: echo "deploy done ${MY_SECRET} and ${VAL_1}"
+      run: echo "deploy done ${MY_SECRET} and ${VAL_1}" && sleep 5
+    - name: run lint simulator
+      run: echo "deploy done ${MY_SECRET} and ${VAL_1}" && sleep 5
+    - name: run lint simulator
+      run: echo "deploy done ${MY_SECRET} and ${VAL_1}" && sleep 5
   

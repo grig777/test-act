@@ -34,6 +34,7 @@ jobs:
       working-directory: ./app
       run: npm ci
     - name: run build simulator
+      working-directory: ./app
       run: npm run build
     - name: artifact the build
       uses: actions/upload-artifact@v3

@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - name: run buil simulator
-      run: num run build
+    - name: run build simulator
+      run: npm run build
     - name: artifact the build
       uses: actions/upload-artifact@v3
       with:

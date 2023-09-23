@@ -54,6 +54,8 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: frontand-build
+    - name: List artifacts
+      run: ls
     - name: run lint simulator
       run: echo "deploy done ${MY_SECRET} and ${VAL_1}" && sleep 5
     - name: run lint simulator

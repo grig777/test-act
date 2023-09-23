@@ -50,6 +50,10 @@ jobs:
       VAL_1: ${{ vars.VAR_1 }}
     runs-on: ubuntu-latest
     steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: frontand-build
     - name: run lint simulator
       run: echo "deploy done ${MY_SECRET} and ${VAL_1}" && sleep 5
     - name: run lint simulator

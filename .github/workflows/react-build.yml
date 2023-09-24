@@ -10,16 +10,7 @@ jobs:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: example
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/cache@v3
-      id: cache
-      with:
-        path: ./app/node_modules
-        key: node_module_cache_${{ hashFiles('./app/package-lock.json')}}
-    - name: install depandancy
-      if: steps.cache.output.cache-hit != 'true'
-      working-directory: ./app
-      run: npm install
+    - uses: ./.github/workflows/checkout-cache-install.yml
     - name: Test
       working-directory: ./app
       run: npm run test

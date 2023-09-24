@@ -1,0 +1,17 @@
+name: checkout-cache-install
+on: workflow_call
+jobs:
+  checkout&install:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/cache@v3
+      id: cache
+      with:
+        path: ./app/node_modules
+        key: node_module_cache_${{ hashFiles('./app/package-lock.json')}}
+    - name: install depandancy
+      if: steps.cache.output.cache-hit != 'true'
+      working-directory: ./app
+      run: npm install
+   

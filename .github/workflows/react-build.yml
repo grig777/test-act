@@ -11,6 +11,12 @@ jobs:
           MONGO_INITDB_ROOT_PASSWORD: example
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.npm
+          ./app/node_modules
+        key: node_module_cache_${{ hashFiles('./app/package-lock.json')}}
     - name: install depandancy
       working-directory: ./app
       run: npm ci
@@ -30,6 +36,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+    - uses: actions/cache@v3
+      with:
+        path: |
+          ~/.npm
+          ./app/node_modules
+        key: node_module_cache_${{ hashFiles('./app/package-lock.json')}}
     - name: install depandancy
       working-directory: ./app
       run: npm ci

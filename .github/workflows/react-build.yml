@@ -10,7 +10,8 @@ jobs:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: example
     steps:
-    - uses: ./.github/workflows/checkout-cache-install.yml
+    - uses: actions/checkout@v4
+    - uses: ./.github/workflows/cache-install.yml
     - name: Test
       working-directory: ./app
       run: npm run test

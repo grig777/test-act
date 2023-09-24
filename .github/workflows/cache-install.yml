@@ -1,10 +1,9 @@
-name: checkout-cache-install
+name: cache-install
 on: workflow_call
 jobs:
   checkout&install:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
     - uses: actions/cache@v3
       id: cache
       with:
